@@ -1,7 +1,7 @@
 -- Whitelist Configuration
 local whitelisted_users = {
-    ["5273775282"] = true,  -- n4bil_99
-    ["972469687"] = true    -- C3L5B
+    ["5273775282"] = true,  
+    ["972469687"] = true   
 }
 
 -- Function to check if the user is whitelisted
