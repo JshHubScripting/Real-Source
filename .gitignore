@@ -1,18 +1,21 @@
+
 -- Whitelist Configuration
 local whitelisted_users = {
-    ["5273775282"] = true,  
-    ["972469687"] = true   
+    [5273775282] = true,  -- n4bil_99
+    [972469687] = true    -- C3L5B
 }
 
--- Function to check if the user is whitelisted
-local function is_whitelisted(user_id)
-    return whitelisted_users[tostring(user_id)] or false
+-- Get the local player's user ID (for execution in Roblox)
+local success, player = pcall(function() return game.Players.LocalPlayer end)
+if not success or not player then
+    print("Failed to get LocalPlayer.")
+    return
 end
 
--- Replace 'USER_ID_HERE' with the actual user ID variable used in the script
-local user_id = USER_ID_HERE  -- Make sure this variable is properly assigned in your script
+local user_id = player.UserId
 
-if not is_whitelisted(user_id) then
+-- Check if the user is whitelisted
+if not whitelisted_users[user_id] then
     print("You Aren't WhiteListed. Trident.Aim")
     return  -- Stops script execution
 end
